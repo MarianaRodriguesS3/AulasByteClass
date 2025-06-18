@@ -1,0 +1,22 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.classeExemplo{
+color: blue;
+font-size: 2em;
+
+}
+
+h1{
+    color: red;
+    font-size: 3rem;
+}
+
+#testeFlex{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
