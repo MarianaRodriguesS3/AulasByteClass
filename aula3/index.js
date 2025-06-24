@@ -36,6 +36,12 @@ function percentual(a, b) {
 }
 percentual(posicao1, posicao2);
 
+//media
+function calculaMedia(a,b) {
+    return (a + b) / 2;
+}
+calculaMedia(posicao1, posicao2);
+
 function operacao(n1, n2, op) {
     if (op == '+') 
         return soma(n1, n2);
@@ -47,6 +53,8 @@ function operacao(n1, n2, op) {
         return divide(n1, n2);
     else if (op == '%') 
         return percentual(n1, n2);
+    else if (op == 'media') 
+        return calculaMedia(n1, n2);
     else 
     return 'operação inválida';
 }
@@ -59,6 +67,7 @@ console.log("Operação /:", operacao(20, 10, '/'));
 console.log("Operação / com zero:", operacao(20, 0, '/'));
 console.log("Operação %:", operacao(20, 10, '%'));
 console.log("Operação % com zero:", operacao(20, 0, '%'));
+console.log("Operação media:", operacao(20, 10, 'media'));
 console.log("Operação inválida:", operacao(20, 10, '^'));
 
 var cadastro = {
