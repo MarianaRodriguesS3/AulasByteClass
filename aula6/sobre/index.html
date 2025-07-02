@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+    <button onclick="mostrarAlerta('Mariana')">Clique em mim</button>
+    <button onclick="temaClaro()">Dia</button>
+    <button onclick="temaEscuro()">Noite</button>
+    <h1>Dia</h1>
+
+    <script src="../assets/script.js"></script>
+    <script>
+        let nome = "Mariana"
+        /* function mostrarAlerta(nome) {
+             alert("Ola querida " + nome);
+         } */
+        let mostrarAlerta = (nome) => alert("Ola querida " + nome);
+        function temaClaro() {
+            let body = document.querySelector('body');
+            body.style.backgroundColor = 'white';
+            let titulo = document.querySelector('h1')
+            titulo.style.color = "red";
+            titulo.textContent = 'Dia';
+        }
+        function temaEscuro() {
+            let body = document.querySelector('body');
+            body.style.backgroundColor = 'black';
+            let titulo = document.querySelector('h1')
+            titulo.style.color = "green";
+            titulo.textContent = 'Noite';
+        }
+
+    </script>
+</body>
+
+</html>
