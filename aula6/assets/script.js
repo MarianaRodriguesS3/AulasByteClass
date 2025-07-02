@@ -6,3 +6,17 @@ const toggleTheme = () => {
   h1.style.color = (h1.style.color === 'green') ? 'red' : 'green';
   h1.textContent = (h1.style.color === 'red') ? 'Dia' : 'Noite';
 };
+
+/*
+for (i= 0; i < 3; i++) {
+  console.log("hello wold!") 
+ 
+}*/
+let saudacao = [1, 2, 3];
+
+for (let i = 0; i < saudacao.length; i++) {
+  console.log("hello wold!") 
+}
+/*
+let numeros = [1,2,3]
+numeros.forEach(()=> console.log("hello wold!"))*/
