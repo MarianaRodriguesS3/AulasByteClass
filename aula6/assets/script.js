@@ -9,19 +9,19 @@ const toggleTheme = () => {
 
 /*
 for (i= 0; i < 3; i++) {
-  console.log("hello wold!") 
+  console.log("hello world!") 
 }
 
 let saudacao = [1, 2, 3];
 for (let i = 0; i < saudacao.length; i++) {
-  console.log("hello wold!") 
+  console.log("hello world!") 
 } 
 
 let saudacao = [1,2,3]
-saudacao.forEach(()=> console.log("hello wold!"))
+saudacao.forEach(()=> console.log("hello world!"))
 */
 
-let imprime = "hello wold!"
+let imprime = "hello world!"
 
 for (let i = 0; i < 3; i++) {
   console.log(imprime)
