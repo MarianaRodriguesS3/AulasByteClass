@@ -10,13 +10,21 @@ const toggleTheme = () => {
 /*
 for (i= 0; i < 3; i++) {
   console.log("hello wold!") 
- 
-}*/
-let saudacao = [1, 2, 3];
+}
 
+let saudacao = [1, 2, 3];
 for (let i = 0; i < saudacao.length; i++) {
   console.log("hello wold!") 
+} 
+
+let saudacao = [1,2,3]
+saudacao.forEach(()=> console.log("hello wold!"))
+*/
+
+let imprime = "hello wold!"
+
+for (let i = 0; i < 3; i++) {
+  console.log(imprime)
 }
-/*
-let numeros = [1,2,3]
-numeros.forEach(()=> console.log("hello wold!"))*/
+
+
