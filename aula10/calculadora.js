@@ -41,12 +41,17 @@ function calcularResultado() {
     const expressao = visor.value;
     const operadores = ['+', '-', '*', '/'];
 
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+    //https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
     const operador = operadores.find(op => expressao.includes(op));
     if (!operador) return visor.value = "Expressão inválida";
 
+    //https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/split
     const partes = expressao.split(operador);
     if (partes.length !== 2) return visor.value = "Expressão inválida";
 
+    //https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+    //https://www.w3schools.com/jsref/jsref_number.asp
     const [n1, n2] = partes.map(Number);
 
     visor.value = operacao(n1, n2, operador);
