@@ -1,0 +1,38 @@
+/* Importação de fonte do Google Fonts para um visual mais moderno */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+    --trello-blue: #0079bf;
+    --trello-dark-blue: #0067a3;
+    --list-bg-color: #ebecf0;
+    --card-bg-color: #ffffff;
+    --text-color: #172b4d;
+    --light-text-color: #6b778c;
+    --shadow-light: rgba(9, 30, 66, 0.1);
+    --shadow-medium: rgba(9, 30, 66, 0.15);
+    --shadow-strong: rgba(9, 30, 66, 0.25);
+    --border-radius: 3px;
+    --transition-speed: 0.2s;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Usando a nova fonte */
+    background-color: var(--trello-blue);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    line-height: 1.5;
+    overflow: hidden; /* Controla o overflow geral para evitar barras de rolagem indesejadas */
+}
+
+.header {
+    background-color: var(--trello-dark-blue);
+    padding: 15px 25px;
+    color: white;
+    box-shadow: 0 4px 8px var(--shadow-strong); /* Sombra mais pronunciada */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10; /* Garante que o cabeçalho fique acima de outros elementos */
+    position: relative;
+}
