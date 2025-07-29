@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .style {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <!--1. Crie um campo de texto e um botão. Ao clicar no botão, 
+    o texto digitado deve aparecerer em um paragrafo abaixo.-->
+
+    <!--2. Crie uma lista de nomes. Ao clicar em um nome, 
+    ele deve mudar de cor usando classList.tooglle.-->
+
+    <!--3. Adicione um botão "Remover tudo" que apague todos 
+    os itens da lista.-->
+
+    <!--4. Crie um campo de texto com um contador de 
+    caracteres em tempo real.-->
+
+    <!--5. Faça um formulário com campos "nome" e "email".
+    Ao clicar em "Enviar", os dados devem ser exibidos 
+    na tela sem recarregar a página. -->
+
+    <h1>Formulário</h1>
+
+    <form id="formulario">
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" required>
+        <p>Contador de caracteres (Nome): <span id="contadorNome">0</span></p>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" required>
+        <p>Contador de caracteres (Email): <span id="contadorEmail">0</span></p>
+
+        <button type="submit">Enviar</button>
+        <button type="button" id="apagar">Remover tudo</button>
+    </form>
+
+    <h2>Dados enviados:</h2>
+    <p id="exibir"></p>
+
+    <script src="atividade.js"></script>
+
+</body>
+
+</html>
