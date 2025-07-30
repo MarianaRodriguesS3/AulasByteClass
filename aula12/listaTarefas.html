@@ -1,5 +1,21 @@
-<input id="itemInput">
-<button id="adicionarBtn">Digite sua tarefa</button>
-<ul id="lista">
-    <script src="listaTarefas.js"></script>
-</ul>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inputTarefa" placeholder="Digite sua terefa">
+    <button id="BtnAdicionar">Adicionar</button>
+    <div>
+        <button onclick="filtro('todas')">Todas</button>
+        <button onclick="filtro('pendentes')">Pendentes</button>
+        <button onclick="filtro('concluidas')">Concluidas</button>
+    </div>
+    <ul id="listaTarefas"></ul>
+</body>
+<script src="listaTarefas.js"></script>
+</html>

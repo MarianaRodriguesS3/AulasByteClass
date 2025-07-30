@@ -19,7 +19,7 @@ form.addEventListener("submit", (event) => {
     exibir.appendChild(p);
 
     p.addEventListener("click", () => {
-        p.classList.toggle("style");
+        p.classList.toggle("style"); 
     });
 
     form.reset();
