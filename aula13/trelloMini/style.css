@@ -36,3 +36,238 @@ body {
     z-index: 10; /* Garante que o cabeçalho fique acima de outros elementos */
     position: relative;
 }
+
+.header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.board {
+    display: flex;
+    padding: 20px;
+    align-items: flex-start;
+    overflow-x: auto; /* Permite rolagem horizontal */
+    height: calc(100vh - 75px); /* Ajusta a altura considerando o header */
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho */
+}
+
+/* Scrollbar estilizado (apenas para navegadores baseados em WebKit como Chrome/Safari) */
+.board::-webkit-scrollbar {
+    height: 8px;
+}
+
+.board::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.board::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+.board::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+
+.list {
+    background-color: var(--list-bg-color);
+    border-radius: var(--border-radius);
+    width: 280px; /* Ligeiramente mais largo */
+    margin-right: 15px; /* Mais espaçamento entre listas */
+    padding: 12px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 4px var(--shadow-medium); /* Sombra suave */
+    display: flex;
+    flex-direction: column;
+    min-height: 80px; /* Altura mínima para listas vazias */
+}
+
+.list-header {
+    font-weight: 600; /* Mais negrito */
+    margin-bottom: 12px;
+    padding: 5px 0;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.1em;
+}
+
+.list-header-input {
+    width: calc(100% - 10px);
+    border: none;
+    padding: 8px;
+    font-weight: 600;
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: inset 0 0 0 2px var(--trello-blue); /* Borda ao focar */
+    outline: none; /* Remove o outline padrão */
+}
+
+.cards-container {
+    flex-grow: 1;
+    min-height: 15px; /* Garante área de drop visível */
+    /* Estilização para permitir rolagem de cartões dentro da lista, se necessário */
+    overflow-y: auto;
+    max-height: calc(100vh - 250px); /* Ajusta conforme o tamanho da tela e header/footer */
+    padding-right: 5px; /* Espaço para a scrollbar interna */
+}
+
+/* Scrollbar para o container de cartões */
+.cards-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cards-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+}
+
+.cards-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.cards-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.card {
+    background-color: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 2px var(--shadow-light); /* Sombra mais sutil para cartões */
+    cursor: grab;
+    word-wrap: break-word;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.card:last-child {
+    margin-bottom: 0;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px var(--shadow-medium); /* Sombra ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de "levantar" */
+}
+
+.card.dragging {
+    opacity: 0.6; /* Mais visível que 0.5 */
+    transform: rotate(2deg); /* Uma leve rotação ao arrastar */
+    box-shadow: 0 8px 16px var(--shadow-strong); /* Sombra mais forte ao arrastar */
+    border: 1px dashed var(--trello-blue); /* Borda tracejada para indicar arrasto */
+    cursor: grabbing;
+}
+
+/* Estilo para o campo de edição de cartão (textarea) */
+.card-edit-input {
+    width: 100%;
+    border: none;
+    resize: none; /* Permite redimensionar */
+    padding: 5px;
+    border-radius: var(--border-radius);
+    box-shadow: inset 0 0 0 2px var(--trello-blue);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9em;
+    box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+
+/* Estilos para botões */
+.add-card-btn,
+.add-list-btn,
+.add-card-form button,
+.add-list-form button {
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-card-btn {
+    background-color: transparent;
+    color: var(--light-text-color);
+    width: 100%;
+    text-align: left;
+    margin-top: 8px;
+    font-size: 0.95em;
+    padding: 8px 10px;
+}
+
+.add-card-btn:hover {
+    background-color: rgba(9, 30, 66, 0.08); /* Fundo sutil ao passar o mouse */
+    color: var(--text-color);
+}
+
+.add-list-container {
+    flex-shrink: 0;
+    width: 280px;
+    margin-right: 15px;
+}
+
+.add-list-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 100%;
+    text-align: left;
+    font-size: 1em;
+}
+
+.add-list-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Formulários de Adição (Cartão e Lista) */
+.add-card-form, .add-list-form {
+    background-color: var(--list-bg-color); /* Para a lista, o formulário é sobreposto */
+    padding: 8px;
+    border-radius: var(--border-radius);
+    margin-top: 5px;
+    box-shadow: 0 1px 0 var(--shadow-light); /* Pequena sombra para destacar */
+}
+
+.add-card-form textarea, .add-list-form input[type="text"] {
+    width: calc(100% - 20px); /* Ajusta para padding */
+    border: none;
+    resize: vertical; /* Permite redimensionar verticalmente */
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: var(--border-radius);
+    box-shadow: inset 0 0 0 2px var(--trello-blue);
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+.add-card-form button, .add-list-form button {
+    background-color: #5aac44; /* Verde de sucesso */
+    color: white;
+    padding: 8px 12px;
+    font-size: 0.9em;
+    margin-right: 8px;
+}
+
+.add-card-form button:hover, .add-list-form button:hover {
+    background-color: #61bd4f; /* Verde mais claro ao hover */
+}
+
+.add-card-form .cancel-btn, .add-list-form .cancel-btn {
+    background-color: transparent;
+    color: var(--light-text-color);
+    font-size: 1.2em; /* Ícone de "X" maior */
+    padding: 5px; /* Menor padding para o ícone */
+}
+
+.add-card-form .cancel-btn:hover, .add-list-form .cancel-btn:hover {
+    background-color: rgba(9, 30, 66, 0.08);
+    color: var(--text-color);
+}
