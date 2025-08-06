@@ -9,13 +9,19 @@
 
 <body>
     <input type="text" id="inputTarefa" placeholder="Digite sua terefa">
-    <button id="BtnAdicionar">Adicionar</button>
+    <button id="btnAdicionar">Adicionar</button>
     <div>
         <button onclick="filtro('todas')">Todas</button>
         <button onclick="filtro('pendentes')">Pendentes</button>
         <button onclick="filtro('concluidas')">Concluidas</button>
     </div>
     <ul id="listaTarefas"></ul>
+    <div id="contadorTarefas">
+        <p>Total: <span id="total">0</span></p>
+        <p>Quantidade de tarefas concluidas: <span id="tarefaConcluida">0</span></p>
+        <p>Quantidade de tarefas pendentes: <span id="tarefasPendendes">0</span></p>
+    </div>
 </body>
 <script src="listaTarefas.js"></script>
+
 </html>

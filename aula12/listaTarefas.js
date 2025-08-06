@@ -21,7 +21,7 @@ function mostrarTarefas(filtroTipo = "todas") {
         li.style.textDecoration = tarefa.concluida ? "line-through" : "none";
 
         li.addEventListener('click', () => {
-            tarefa[index].concluida = !tarefas[index].concluida;
+            tarefas[index].concluida = !tarefas[index].concluida;
             salvarTarefas();
             mostrarTarefas(filtroTipo);
         });
@@ -37,5 +37,31 @@ function mostrarTarefas(filtroTipo = "todas") {
         li.appendChild(btnRemover);
         lista.appendChild(li);
     });
-
 };
+
+document.getElementById("btnAdicionar").addEventListener('click', () => {
+    const input = document.getElementById("inputTarefa");
+    const texto = input.value.trim();
+    if(texto === "") return;
+
+    tarefas.push({texto, concluida: false});
+    input.value = "";
+    salvarTarefas();
+    mostrarTarefas();
+});
+
+function filtro(tipo){
+    mostrarTarefas(tipo);
+}
+mostrarTarefas();
+
+const lista = document.getElementById("listaTarefas");
+const contador = document.getElementById("contadorTarefa");
+const botao = document.getElementById("btnAdicionar");
+let quantidadeTarefas = 0
+
+botao.addEventListener("click", function() {
+    quantidadeTarefas = lista.getElementsByTagName("li").length;
+    resultado.textContent = "Total: " + quantidadeTarefas;
+
+});
