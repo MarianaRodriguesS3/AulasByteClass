@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="listaTarefas.css">
 </head>
 
 <body>
     <input type="text" id="inputTarefa" placeholder="Digite sua terefa">
     <button id="btnAdicionar">Adicionar</button>
-    <div>
+    <div class="botoes">
         <button onclick="filtro('todas')">Todas</button>
         <button onclick="filtro('pendentes')">Pendentes</button>
         <button onclick="filtro('concluidas')">Concluidas</button>
@@ -19,7 +20,7 @@
     <div id="contadorTarefas">
         <p>Total: <span id="total">0</span></p>
         <p>Quantidade de tarefas concluidas: <span id="tarefaConcluida">0</span></p>
-        <p>Quantidade de tarefas pendentes: <span id="tarefasPendendes">0</span></p>
+        <p>Quantidade de tarefas pendentes: <span id="tarefasPendentes">0</span></p>
     </div>
 </body>
 <script src="listaTarefas.js"></script>

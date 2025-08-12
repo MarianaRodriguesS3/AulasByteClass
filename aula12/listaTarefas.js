@@ -17,10 +17,16 @@ function mostrarTarefas(filtroTipo = "todas") {
 
     listaFiltrada.forEach((tarefa, index) => {
         const li = document.createElement("li");
-        li.innerText = tarefa.texto;
-        li.style.textDecoration = tarefa.concluida ? "line-through" : "none";
 
-        li.addEventListener('click', () => {
+        // li.innerText = tarefa.texto;
+        const spanTexto = document.createElement("span");
+        spanTexto.innerText = tarefa.texto;
+
+        // li.style.textDecoration = tarefa.concluida ? "line-through" : "none";
+        spanTexto.style.textDecoration = tarefa.concluida ? "line-through" : "none";
+
+        // li.addEventListener('click', () => {
+        spanTexto.addEventListener('click', () => {
             tarefas[index].concluida = !tarefas[index].concluida;
             salvarTarefas();
             mostrarTarefas(filtroTipo);
@@ -34,34 +40,44 @@ function mostrarTarefas(filtroTipo = "todas") {
             mostrarTarefas(filtroTipo);
         });
 
+        // Adiciona texto e botão ao <li>
+        li.appendChild(spanTexto);
         li.appendChild(btnRemover);
         lista.appendChild(li);
     });
+
+    atualizarContadores(); 
 };
-
-document.getElementById("btnAdicionar").addEventListener('click', () => {
-    const input = document.getElementById("inputTarefa");
-    const texto = input.value.trim();
-    if(texto === "") return;
-
-    tarefas.push({texto, concluida: false});
-    input.value = "";
-    salvarTarefas();
-    mostrarTarefas();
-});
 
 function filtro(tipo){
     mostrarTarefas(tipo);
 }
 mostrarTarefas();
 
-const lista = document.getElementById("listaTarefas");
-const contador = document.getElementById("contadorTarefa");
-const botao = document.getElementById("btnAdicionar");
-let quantidadeTarefas = 0
+function adicionarTarefa() {
+    const input = document.getElementById("inputTarefa");
+    const texto = input.value.trim();
+    if (texto === "") return;
 
-botao.addEventListener("click", function() {
-    quantidadeTarefas = lista.getElementsByTagName("li").length;
-    resultado.textContent = "Total: " + quantidadeTarefas;
+    tarefas.push({ texto, concluida: false });
+    input.value = "";
+    salvarTarefas();
+    mostrarTarefas();
+}
 
+document.getElementById("btnAdicionar").addEventListener('click', adicionarTarefa);
+document.getElementById("inputTarefa").addEventListener('keyup', (event) => {
+    if (event.key === "Enter") {
+        adicionarTarefa();
+    }
 });
+
+function atualizarContadores() {
+    const total = tarefas.length;
+    const concluidas = tarefas.filter(t => t.concluida).length;
+    const pendentes = tarefas.filter(t => !t.concluida).length;
+
+    document.getElementById('total').innerText = total;
+    document.getElementById('tarefaConcluida').innerText = concluidas;
+    document.getElementById('tarefasPendentes').innerText = pendentes;
+}
