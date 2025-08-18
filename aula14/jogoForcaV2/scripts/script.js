@@ -12,7 +12,7 @@ const maxErros = 6;
 const reiniciarJogo = () => {
     letrasCorretas = [];
     contadorErros = 0;
-    imagemForca.src = "img/hangman-0.svg";
+    imagemForca.src = "images/hangman-0.svg";
     textoErros.innerText = `${contadorErros} / ${maxErros}`;
     exibicaoPalavra.innerHTML = palavraAtual.split("").map(() => `<li class="letra"></li>`).join("");
     tecladoDiv.querySelectorAll("button").forEach(botao => botao.disabled = false);
@@ -32,7 +32,13 @@ const fimDeJogo = (vitoria) => {
     modalJogo.querySelector("h4").innerText = vitoria ? 'Parabéns!' : 'Fim de Jogo!';
     modalJogo.querySelector("p").innerHTML = `${textoModal} <b>${palavraAtual}</b>`;
     modalJogo.classList.add("mostrar");
+
+    // Tocar som de acordo com o resultado
+    const som = document.getElementById(vitoria ? "som-vitoria" : "som-derrota");
+    som.currentTime = 0; // Reinicia o som (caso jogue de novo)
+    som.play();
 };
+
 
 const iniciarJogo = (botao, letraClicada) => {
     if (palavraAtual.includes(letraClicada)) {
@@ -46,7 +52,7 @@ const iniciarJogo = (botao, letraClicada) => {
         });
     } else {
         contadorErros++;
-        imagemForca.src = `img/hangman-${contadorErros}.svg`;
+        imagemForca.src = `images/hangman-${contadorErros}.svg`;
     }
     botao.disabled = true;
     textoErros.innerText = `${contadorErros} / ${maxErros}`;
