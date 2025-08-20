@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da Forca em JavaScript | CodingNepal</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="scripts/word-list.js" defer></script>
+    <script src="scripts/script.js" defer></script>
+</head>
+
+<body>
+    <!-- HEADER FIXO NO TOPO -->
+    <header>
+        <h1>Bem-vindo ao Jogo da Forca</h1>
+    </header>
+
+    <!-- MAIN COM MENU LATERAL E CONTEÚDO DO JOGO -->
+    <main>
+        <!-- MENU LATERAL ENTRE HEADER E FOOTER -->
+        <aside class="menu-lateral">
+            <nav>
+                <ul>
+                    <li><a href="#" class="ativo">Forca</a></li>
+                    <li><a href="#">Jogo 2</a></li>
+                    <li><a href="#">Jogo 3</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL DO JOGO -->
+        <section class="conteudo-jogo">
+            <!-- MODAL DE FIM DE JOGO -->
+            <section class="modal-jogo">
+                <div class="conteudo">
+                    <img src="#" alt="gif" />
+                    <h4>Fim de Jogo!</h4>
+                    <p>A palavra correta era: <b>arco-íris</b></p>
+                    <button class="jogar-novamente">Jogar Novamente</button>
+                </div>
+            </section>
+
+            <!-- CONTAINER DO JOGO -->
+            <section class="container">
+                <section class="caixa-forca">
+                    <img src="#" draggable="false" alt="imagem-da-forca" />
+                    <h2>Jogo da Forca</h2>
+                </section>
+
+                <section class="caixa-jogo">
+                    <ul class="exibicao-palavra"></ul>
+                    <h4 class="texto-dica">Dica: <b></b></h4>
+                    <h4 class="texto-erros">Erros: <b></b></h4>
+                    <div class="teclado"></div>
+                </section>
+            </section>
+
+            <!-- ÁUDIO -->
+            <div>
+                <audio id="som-vitoria" src="sounds/victory.mp3"></audio>
+                <audio id="som-derrota" src="sounds/lost.mp3"></audio>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER FIXO NA BASE -->
+    <footer>
+        <p>&copy; 2025 Jogo da Forca | Codificado por
+            <a href="https://www.codingnepalweb.com" target="_blank">CodingNepal</a>
+        </p>
+    </footer>
+</body>
+
+</html>
