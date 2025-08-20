@@ -4,3 +4,6 @@ mariana
 maria
 roberto
 antonio
+
+cachorro
+gato
