@@ -1,341 +1,337 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
 }
 
 body {
-  background: #da1a5a;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  color: #000; /* texto padrão preto */
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    background: #da1a5a;
+    margin-right: 50px;
 }
 
-/* Header fixo no topo */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: #111;
-  color: #fff; /* letras brancas */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  font-weight: 600;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 10000;
+    height: 15%;
+    background: #da1a5a;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
 }
 
-/* Footer fixo na base */
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  background: #111;
-  color: #fff; /* letras brancas */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  font-weight: 500;
-  padding: 0 10px;
-  z-index: 10000;
+    height: 7%;
+    background: #da1a5a;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0 10px;
 }
 
 footer a {
-  color: #fff;
-  text-decoration: underline;
+    color: #000;
+    text-decoration: underline;
 }
 
-/* Main ocupa o espaço entre header e footer */
 main {
-  position: fixed;
-  top: 50px;      /* altura do header */
-  bottom: 40px;   /* altura do footer */
-  left: 0;
-  right: 0;
-  display: flex;
-  padding: 40px 40px; /* topo/baixo e laterais */
-  gap: 20px;
-  background: #da1a5a;
-  overflow: hidden;
+    flex: 1 1 85%;
+    display: flex;
+    overflow: hidden;
+    gap: 0;
+    flex-direction: row;
 }
-
-/* Menu lateral */
+    
 .menu-lateral {
-  width: 180px;
-  background-color: transparent;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
+    flex: 0 0 23%;
+    background: #da1a5a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .menu-lateral nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.menu-lateral nav ul li {
+    margin: 0;
+    padding: 0;
 }
 
 .menu-lateral nav ul li a {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background-color: #111;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border: 2px solid #fff;
-  transition: all 0.3s ease;
-  padding: 10px;
-  box-sizing: border-box;
-  word-break: break-word;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #111;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
+    padding: 10px;
+    box-sizing: border-box;
+    word-break: break-word;
 }
 
-.menu-lateral nav ul li a:hover,
+
 .menu-lateral nav ul li a.ativo {
-  background-color: #444;
-  border-color: #fff;
-  color: #fff;
+    background-color: #444;
+    border-color: #fff;
+    color: #fff;
 }
 
-/* Conteúdo do jogo */
+.menu-lateral nav ul li a:hover {
+    background-color: #444;
+    border-color: #fff;
+    color: #fff;
+    transform: scale(1.2);
+}
+
 .conteudo-jogo {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  overflow-y: auto;
-  background: #f9dfe7;
-  border-radius: 10px;
-  padding: 30px 40px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    overflow-y: auto;
+    background: #f9dfe7;
+    border-radius: 10px;
+    padding: 30px 40px;
+    margin-right: 20px;
+    box-sizing: border-box;
 }
 
-/* Container do jogo */
 .container {
-  display: flex;
-  gap: 70px;
-  align-items: flex-end;
-  justify-content: space-between;
-  max-width: 850px;
-  width: 100%;
+    display: flex;
+    gap: 70px;
+    align-items: flex-end;
+    justify-content: space-between;
+    max-width: 850px;
+    width: 100%;
+    border-radius: 10px;
 }
 
-/* Caixas internas */
 .caixa-forca img {
-  user-select: none;
-  max-width: 270px;
+    user-select: none;
+    max-width: 270px;
 }
 
 .caixa-forca h2 {
-  font-size: 1.45rem;
-  text-align: center;
-  margin-top: 20px;
-  text-transform: uppercase;
+    font-size: 1.45rem;
+    text-align: center;
+    margin-top: 20px;
+    text-transform: uppercase;
 }
 
 .caixa-jogo .exibicao-palavra {
-  gap: 10px;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+    gap: 10px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .exibicao-palavra .letra {
-  width: 28px;
-  font-size: 2rem;
-  text-align: center;
-  font-weight: 600;
-  margin-bottom: 40px;
-  text-transform: uppercase;
-  border-bottom: 3px solid #000;
+    width: 28px;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #000;
 }
 
 .exibicao-palavra .letra.adivinhada {
-  margin: -40px 0 35px;
-  border-color: transparent;
+    margin: -40px 0 35px;
+    border-color: transparent;
 }
 
 .caixa-jogo h4 {
-  text-align: center;
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
 }
 
 .caixa-jogo h4 b {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .caixa-jogo .texto-erros b {
-  color: #ff4c6b;
+    color: #ff4c6b;
 }
 
-/* Teclado */
 .teclado {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 40px;
-  justify-content: center;
-  align-items: center;
-  max-width: 420px;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+    max-width: 420px;
+    width: 100%;
 }
 
 .linha-teclado {
-  display: flex;
-  gap: 5px;
-  justify-content: center;
-  width: 100%;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    width: 100%;
 }
 
 .linha-teclado button {
-  width: 40px;
-  height: 40px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 4px;
-  background: #da1a5a;
-  color: #000000;
-  cursor: pointer;
-  user-select: none;
+    width: 40px;
+    height: 40px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    background: #da1a5a;
+    color: #000000;
+    cursor: pointer;
+    user-select: none;
 }
 
 .teclado button[disabled] {
-  pointer-events: none;
-  opacity: 0.6;
+    pointer-events: none;
+    opacity: 0.6;
 }
 
 .teclado button:hover:not(:disabled) {
-  background: #e0527d;
+    background: #e0527d;
 }
 
-/* Modal fim de jogo */
 .modal-jogo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  pointer-events: none;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  padding: 0 10px;
-  transition: opacity 0.4s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 0 10px;
+    transition: opacity 0.4s ease;
 }
 
 .modal-jogo.mostrar {
-  opacity: 1;
-  pointer-events: auto;
-  transition: opacity 0.4s 0.4s ease;
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.4s 0.4s ease;
 }
 
 .modal-jogo .conteudo {
-  padding: 30px;
-  max-width: 420px;
-  width: 100%;
-  border-radius: 10px;
-  background: #fff;
-  text-align: center;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 420px;
+    width: 100%;
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .modal-jogo img {
-  max-width: 130px;
-  margin-bottom: 20px;
+    max-width: 130px;
+    margin-bottom: 20px;
 }
 
 .modal-jogo h4 {
-  font-size: 1.53rem;
+    font-size: 1.53rem;
 }
 
 .modal-jogo p {
-  font-size: 1.15rem;
-  margin: 15px 0 30px;
-  font-weight: 500;
+    font-size: 1.15rem;
+    margin: 15px 0 30px;
+    font-weight: 500;
 }
 
 .modal-jogo p b {
-  color: #da1a5a;
-  font-weight: 600;
+    color: #da1a5a;
+    font-weight: 600;
 }
 
 .modal-jogo button {
-  padding: 12px 23px;
-  background: #f0c3cf;
-  color: #000000;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+    padding: 12px 23px;
+    background: #f0c3cf;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .modal-jogo button:hover {
-  background: #e4a9bb;
+    background: #e4a9bb;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  main {
-    flex-direction: column;
-    padding: 40px 40px;
-  }
+    main {
+        flex-direction: column;
+        padding: 0;
+    }
 
-  .menu-lateral {
-    flex-direction: row;
-    width: 100%;
-    height: auto;
-    gap: 20px;
-    padding: 20px 0;
-    justify-content: center;
-  }
+    .menu-lateral {
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        gap: 20px;
+        padding: 20px 0;
+        justify-content: center;
+    }
 
-  .menu-lateral nav ul {
-    flex-direction: row;
-  }
+    .menu-lateral nav ul {
+        flex-direction: row;
+    }
 
-  .menu-lateral nav ul li a {
-    width: 60px;
-    height: 60px;
-    font-size: 0.8rem;
-  }
+    .menu-lateral nav ul li a {
+        width: 60px;
+        height: 60px;
+        font-size: 0.8rem;
+    }
 
-  .conteudo-jogo {
-    padding: 20px 15px;
-  }
+    .conteudo-jogo {
+        padding: 20px 15px;
+        margin-right: 0;
+    }
 
-  .container {
-    flex-direction: column;
-    gap: 30px;
-    padding: 30px 20px;
-  }
+    .container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 20px;
+    }
 }
