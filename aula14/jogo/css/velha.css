@@ -138,9 +138,8 @@ button:hover {
   .tabuleiro {
     max-width: 100%;
     gap: 3px;
+    max-width: 200px;
   }
 
-  .jogada {
-    flex: 0 0 45%;
-  }
+ 
 }
