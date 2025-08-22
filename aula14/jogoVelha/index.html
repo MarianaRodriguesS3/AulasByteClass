@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Jogo da Velha</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="jogo">
+    <div class="layout-horizontal">
+      <div class="lado-esquerdo">
+        <div class="cabecalho">
+          <h1>Jogo da Velha</h1>
+          <p id="vez-jogador">Vez do Jogador: X</p>
+        </div>
+
+        <div class="tabuleiro" id="tabuleiro"></div>
+
+        <button onclick="reiniciar()">Reiniciar</button>
+      </div>
+
+      <div class="lado-direito">
+        <div class="rodape">
+          <h3>Histórico de jogadas:</h3>
+          <div id="historico"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

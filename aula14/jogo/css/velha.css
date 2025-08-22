@@ -1,0 +1,146 @@
+.jogo-velha {
+  background-color: #f9dfe7;
+  border-radius: 6px;
+  border: 1px solid #000;
+  width: 100%;      
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+}
+
+.layout-horizontal {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  flex: 1;
+}
+
+.lado-esquerdo {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.cabecalho {
+  text-align: center;
+  border-bottom: 1px solid #000;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin: 10px 0;
+  gap: 3px;
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 1 / 1;
+}
+
+.celula {
+  background-color: #da1a5a;
+  font-size: 2em;
+  text-align: center;
+  border: 1px solid #000;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px 0;
+  font-size: 1em;
+  font-weight: 300;
+  background-color: #da1a5a;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: auto;
+}
+
+button:hover {
+  background-color: #ef4975;
+}
+
+.lado-direito {
+  flex: 1;
+  border-left: 1px solid #000;
+  padding-left: 10px;
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+.rodape h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+#historico {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 0;
+  justify-content: flex-start;
+}
+
+.jogada {
+  flex: 0 0 30%;
+  box-sizing: border-box;
+  padding: 5px;
+  padding-top: 25px;
+  border: 1px solid #ccc;
+  font-family: monospace;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: pre;
+  background-color: #ef4975;
+  text-align: center;
+  font-size: 0.85em;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  user-select: none;
+}
+
+.jogada:hover {
+  background-color: #f485a2;
+}
+
+@media (max-width: 768px) {
+  .jogo-velha {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .layout-horizontal {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .lado-esquerdo, .lado-direito {
+    flex: none;
+    width: 100%;
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .tabuleiro {
+    max-width: 100%;
+    gap: 3px;
+  }
+
+  .jogada {
+    flex: 0 0 45%;
+  }
+}
