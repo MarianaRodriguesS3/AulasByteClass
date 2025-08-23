@@ -90,17 +90,18 @@ footer a {
   transform: scale(1.3);
 }
 
-/* Backgrounds para cada jogo */
 .menu-lateral nav ul li a.forca {
-  background-image: url('images/forca.jpg');
+  background-image: url('../images/forca.jpg');
+  color: transparent
 }
 
-.menu-lateral nav ul li a.jogo2 {
-  background-image: url('images/jogo2.jpg');
+.menu-lateral nav ul li a.velha {
+  background-image: url('../images/velha.jpg');
+  color: transparent
 }
 
 .menu-lateral nav ul li a.jogo3 {
-  background-image: url('images/jogo3.jpg');
+  background-image: url('../images/jogo3.jpg');
 }
 
 .conteudo-jogo {
@@ -116,7 +117,6 @@ footer a {
   min-height: 400px;
 }
 
-/* Utilitário para esconder elementos */
 .hidden {
   display: none !important;
 }
