@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Gerador de Senhas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Sistema Gerador de Senhas</h1>
-    <p>Digite a quantidade entre 4 e 20 caracteres desejados para a criação de sua senha:</p>
-    <input id="qtdCaracteres" type="number" placeholder="numeros de 4 a 20">
-    <button id="botaoGerar">Gerar Senha</button>
+    <div class="container">
+        <main>
+            <h1>Sistema Gerador de Senhas</h1>
+            <p>Digite a quantidade entre 4 e 20 caracteres desejados para a criação de sua senha:</p>
+            <div id="tipoSenha">
+                <label><input type="radio" name="tipoSenha" value="letras">Somente letras</label><br>
+                <label><input type="radio" name="tipoSenha" value="numeros">Somente numeros</label><br>
+                <label><input type="radio" name="tipoSenha" value="caracteres">Letras, numeros e caracteres especiais</label>
+            </div>   
+            <input id="qtdCaracteres" type="number" placeholder="números de 4 a 20">
+            <button id="botaoGerar">Gerar Senha</button>
 
-    <h2>Senha Gerada</h2>
-    <p>Senha atual:<span id="senhaAtual"></span></p>
+            <h2>Senha Gerada</h2>
+            <p>Senha atual: <span id="senhaAtual"></span></p>
+        </main>
 
-    <h2>Histórico</h2>
-    <ul id="historicoSenhas"></ul>
+        <aside>
+            <h2>Histórico</h2>
+            <ul id="historicoSenhas"></ul>
+        </aside>
+    </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

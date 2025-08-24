@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 0 2%;
+}
+
+main {
+  flex: 2;
+}
+
+#tipoSenha {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+#tipoSenha label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+
+aside {
+  flex: 1;
+  background-color: #eaeaea;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+input[type="number"] {
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#senhaAtual {
+  font-weight: bold;
+  color: #27ae60;
+  margin-left: 10px;
+}
+
+ul#historicoSenhas {
+  padding-left: 20px;
+  
+}
+
+#historicoSenhas li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+}
+
+#historicoSenhas li span {
+  margin-right: 15px;
+  word-break: break-all;
+}
+
+#historicoSenhas li button {
+  padding: 5px 10px;
+  background-color: #3498db;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+#historicoSenhas li button:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 600px) {
+  #historicoSenhas li {
+    flex-direction: column;
+    align-items: flex-start; 
+  }
+
+  #historicoSenhas li span {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+
+  #historicoSenhas li button {
+    width: 100%; 
+  }
+}
