@@ -100,8 +100,9 @@ footer a {
   color: transparent
 }
 
-.menu-lateral nav ul li a.jogo3 {
-  background-image: url('../images/jogo3.jpg');
+.menu-lateral nav ul li a.quebraCabeca {
+  background-image: url('../images/quebraCabeca.jpg');
+  color: transparent
 }
 
 .conteudo-jogo {

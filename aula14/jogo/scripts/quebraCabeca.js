@@ -1,10 +1,10 @@
-const quebraCabeca = document.getElementById("quebraCabeca");
-const status = document.getElementById("status");
-
 let blocos = [];
 
 function criarTabuleiro() {
-  quebraCabeca.innerHTML = "";
+  const quebraCabecaContainer = document.getElementById("quebraCabeca");
+  if (!quebraCabecaContainer) return;
+
+  quebraCabecaContainer.innerHTML = "";
   blocos.forEach((num, index) => {
     const bloco = document.createElement("div");
     bloco.className = "bloco";
@@ -15,14 +15,18 @@ function criarTabuleiro() {
       bloco.textContent = num;
       bloco.addEventListener("click", () => moverPeca(index));
     }
-    quebraCabeca.appendChild(bloco);
+    quebraCabecaContainer.appendChild(bloco);
   });
+}
+
+function iniciarQuebraCabeca() {
+  embaralhar();
+  adicionarEventoBotaoEmbaralhar();
 }
 
 function moverPeca(index) {
   const vazio = blocos.indexOf(0);
-  const valido = movimentoValido(index, vazio);
-  if (valido) {
+  if (movimentoValido(index, vazio)) {
     [blocos[index], blocos[vazio]] = [blocos[vazio], blocos[index]];
     criarTabuleiro();
     verificarVitoria();
@@ -38,23 +42,24 @@ function movimentoValido(ind1, ind2) {
 }
 
 function verificarVitoria() {
-  const vitoria = [1,2,3,4,5,6,7,8,0];
+  const status = document.getElementById("status");
+  const vitoria = [1, 2, 3, 4, 5, 6, 7, 8, 0];
   const venceu = blocos.every((val, idx) => val === vitoria[idx]);
-  status.textContent = venceu ? "🎉 Você venceu!" : "";
+  if (status) status.textContent = venceu ? "🎉 Você venceu!" : "";
 }
 
 function embaralhar() {
-  // Gera uma sequência aleatória mas solúvel
   do {
-    blocos = [1,2,3,4,5,6,7,8,0]
-      .sort(() => Math.random() - 0.5);
+    blocos = [1, 2, 3, 4, 5, 6, 7, 8, 0].sort(() => Math.random() - 0.5);
   } while (!ehSolucionavel(blocos) || verificarOrdem(blocos));
   criarTabuleiro();
-  status.textContent = "";
+
+  const status = document.getElementById("status");
+  if (status) status.textContent = "";
 }
 
 function verificarOrdem(arr) {
-  return arr.every((val, idx) => val === [1,2,3,4,5,6,7,8,0][idx]);
+  return arr.every((val, idx) => val === [1, 2, 3, 4, 5, 6, 7, 8, 0][idx]);
 }
 
 function ehSolucionavel(seq) {
@@ -67,5 +72,12 @@ function ehSolucionavel(seq) {
   return inversoes % 2 === 0;
 }
 
-// Inicia o jogo
-embaralhar();
+function adicionarEventoBotaoEmbaralhar() {
+  const botaoEmbaralhar = document.getElementById("botaoEmbaralhar");
+  if (!botaoEmbaralhar) return;
+
+  const novoBotao = botaoEmbaralhar.cloneNode(true);
+  botaoEmbaralhar.parentNode.replaceChild(novoBotao, botaoEmbaralhar);
+
+  novoBotao.addEventListener("click", embaralhar);
+}

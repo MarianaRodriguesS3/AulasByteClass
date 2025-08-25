@@ -61,7 +61,7 @@ button {
   margin: 10px 0;
   font-size: 1em;
   font-weight: 300;
-  background-color: #da1a5a;
+  background-color: #e96088;
   color: #000;
   border: none;
   border-radius: 6px;
@@ -71,7 +71,7 @@ button {
 }
 
 button:hover {
-  background-color: #ef4975;
+  background-color: #d94373;
 }
 
 .lado-direito {
