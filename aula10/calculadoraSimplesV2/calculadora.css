@@ -43,34 +43,41 @@ button {
     transition: background-color 0.3s;
 }
 
-/* Hover para todos os botões - passar mouse */
 button:hover {
     background-color: #b0b0b0;
 }
 
-/* Active para todos os botões - clicando */
 button:active {
     background-color: #909090;
 }
 
-/* Botões de operação: laranja padrão */
 button.operacao {
-    background-color: #4caf50; /* laranja padrão */
+    background-color: #4caf50;
     color: white;
     transition: background-color 0.3s;
 }
 
-/* Hover mouse para botões de operação */
 button.operacao:hover {
     background-color: #45a049;
 }
 
-/* Active (clicando) para botões de operação */
 button.operacao:active {
     background-color: #388e3c;
 }
 
-/* Botão "=" ocupa duas colunas */
 button.operacao:last-child {
-    grid-column: span 2;
+    grid-column: span 4;
+}
+
+button.key-operador {
+    background-color: #c3bebe;
+    color: white;
+}
+
+button.key-operador:hover {
+    background-color: #888888;
+}
+
+button.key-operador:active {
+    background-color: #666666;
 }
