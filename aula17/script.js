@@ -214,3 +214,30 @@ let vetorC = somaElementosMesmoIndice(vetorA, vetorB);
 console.log(`\nlet vetorC =`, vetorC);
 
 // Crie uma função que receba um número e retorne True se ele for primo, senão False.
+
+
+/* Implemente uma função que calcule o MDC 
+(máximo divisor comum) de dois números. */
+
+/* Escreva um programa que simule uma calculadora 
+simples usando funções. */
+
+/* Resolva o problema clássico: dado um número de 
+passos N, de quantas maneiras uma pessoa pode subir 
+a escada se ela pode dar 1 ou 2 passospor vez? */
+
+/* Crie um programa que gere os primeiros N números 
+da sequência de Fibonacci. */
+
+/* Um banco precisa calcular o rendimento mensal de 
+uma aplicação com juros compostos. Peça o capital 
+inicial, a taxa de juros e o número de meses, e 
+mostre o valor final. */
+
+/* Um robô está em um tabuleiro 5x5 na posição inicial 
+(0,0). Ele pode receber uma sequência de comandos 
+('C' = cima, 'B' = baixo, 'E' = esquerda, 'D' = direita).
+Após a execução dos comandos, mostre a posição final do robô. */
+
+/* Crie um programa que leia um texto e informe quantas vogais,
+consoantes, digitos e espaços existem nele. */

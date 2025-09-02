@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-    <link rel="stylesheet" href="calculadora1.css">
+    <link rel="stylesheet" href="calculadora.css">
 </head>
 <body>
 
@@ -16,29 +16,27 @@
             <button onclick="adicionarNoVisor('7')">7</button>
             <button onclick="adicionarNoVisor('8')">8</button>
             <button onclick="adicionarNoVisor('9')">9</button>
-            <button onclick="adicionarNoVisor('/')">÷</button>
+            <button class="key-operador" onclick="adicionarNoVisor('/')">÷</button>
             
-
             <button onclick="adicionarNoVisor('4')">4</button>
             <button onclick="adicionarNoVisor('5')">5</button>
             <button onclick="adicionarNoVisor('6')">6</button>
-            <button onclick="adicionarNoVisor('*')">×</button>
+            <button class="key-operador" onclick="adicionarNoVisor('*')">×</button>
             
-
             <button onclick="adicionarNoVisor('1')">1</button>
             <button onclick="adicionarNoVisor('2')">2</button>
             <button onclick="adicionarNoVisor('3')">3</button>
-            <button onclick="adicionarNoVisor('-')">−</button>
+            <button class="key-operador" onclick="adicionarNoVisor('-')">−</button>
 
             <button onclick="adicionarNoVisor('0')">0</button>
             <button onclick="adicionarNoVisor('.')">.</button>
             <button onclick="limparVisor()">C</button>
-            <button onclick="adicionarNoVisor('+')">+</button>
+            <button class="key-operador" onclick="adicionarNoVisor('+')">+</button>
             <button class="operacao" onclick="calcularResultado()">=</button>
         </div>
 
     </div>
 
-    <script src="calculadora1.js"></script>
+    <script src="calculadora.js"></script>
 </body>
 </html>
