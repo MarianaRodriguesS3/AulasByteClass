@@ -215,10 +215,39 @@ let vetorC = somaElementosMesmoIndice(vetorA, vetorB);
 console.log(`\nlet vetorC =`, vetorC);
 
 // Crie uma função que receba um número e retorne True se ele for primo, senão False.
+let numPrimos = 4;
+function isPrime(n) {
+    if (!Number.isInteger(n)) return false;
+    if (n <= 1) return false;
+    if (n === 2) return true;
+    if (n % 2 === 0) return false;
 
+    const limit = Math.floor(Math.sqrt(n))
+    for (let d = 3; d <= limit; d += 2) {
+        if (n % d === 0) return false;
+    }
+    return true;
+}
+if (isPrime(numPrimos)) {
+    console.log(`\n${numPrimos} é primo`);
+} else {
+    console.log(`\n${numPrimos} não é primo`);
+}
 
 /* Implemente uma função que calcule o MDC 
 (máximo divisor comum) de dois números. */
+ 
+function mdc(a, b) {
+    while (b !== 0) {
+        let resto = a % b // calcula o resto
+        a = b;
+        b = resto;
+    }
+    return a;
+}
+let num1 = 48;
+let num2 = 18;
+console.log(`\nO mdc de ${num1} e ${num2} é ${mdc(num1, num2)}`);
 
 /* Escreva um programa que simule uma calculadora 
 simples usando funções. (Feito em um arquivo separado) */
