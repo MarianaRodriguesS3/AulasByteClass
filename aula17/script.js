@@ -1,4 +1,5 @@
-// Escreva um programa que leia dois numeros e mostre a soma, a subtração, a multiplicação e a divisão entre eles.
+/* Escreva um programa que leia dois numeros e mostre a 
+soma, a subtração, a multiplicação e a divisão entre eles. */
 
 let numeros = [10, 5];
 
@@ -220,7 +221,7 @@ console.log(`\nlet vetorC =`, vetorC);
 (máximo divisor comum) de dois números. */
 
 /* Escreva um programa que simule uma calculadora 
-simples usando funções. */
+simples usando funções. (Feito em um arquivo separado) */
 
 /* Resolva o problema clássico: dado um número de 
 passos N, de quantas maneiras uma pessoa pode subir 
@@ -234,10 +235,116 @@ uma aplicação com juros compostos. Peça o capital
 inicial, a taxa de juros e o número de meses, e 
 mostre o valor final. */
 
+// Vetor de objetos
+const aplicacoes = [
+    { capital: 1000, taxa: 2, meses: 6 },
+    { capital: 5000, taxa: 1.5, meses: 12 },
+    { capital: 2000, taxa: 3, meses: 4 }
+];
+
+function simularJurosCompostos(aplicacoes) {
+    console.log(`\nSimulações de Juros Compostos:`);
+
+    for (let i = 0; i < aplicacoes.length; i++) {
+        const capital = aplicacoes[i].capital;
+        const taxa = aplicacoes[i].taxa;
+        const meses = aplicacoes[i].meses;
+
+        const taxaDecimal = taxa / 100;
+        const montante = capital * Math.pow(1 + taxaDecimal, meses);
+        // Math.pow: calcula potencia
+
+        console.log(`\nExemplo ${i + 1}`);
+        console.log(`Capital Inicial: R$ ${capital.toFixed(2)}`);
+        console.log(`Taxa de Juros: ${taxa}% ao mês`);
+        console.log(`Tempo: ${meses} meses`);
+        console.log(`Montante Final: R$ ${montante.toFixed(2)}`);
+    }
+}
+simularJurosCompostos(aplicacoes);
+
+
 /* Um robô está em um tabuleiro 5x5 na posição inicial 
 (0,0). Ele pode receber uma sequência de comandos 
 ('C' = cima, 'B' = baixo, 'E' = esquerda, 'D' = direita).
 Após a execução dos comandos, mostre a posição final do robô. */
 
+function posicaoFinal(comandos) {
+    const tamanho = 5;
+    let coluna = 0;
+    let linha = 0;
+
+    for (let i = 0; i < comandos.length; i++) {
+        let comando = comandos[i].toLowerCase();
+        // toLowerCase: É um método de string usado para converter todas as letras de uma string para letras minúsculas.
+
+        switch (comando) {
+            case 'cima':
+                if (linha > 0) linha--;
+                break;
+            case 'baixo':
+                if (linha < tamanho - 1) linha++;
+                break;
+            case 'esquerda':
+                if (coluna > 0) coluna--;
+                break;
+            case 'direita':
+                if (coluna < tamanho - 1) coluna++;
+                break;
+            default:
+                console.log(`Comando inválido: ${comando}`);
+        }
+    }
+
+    console.log(`\nPosição final do robô: (${linha}, ${coluna})\n`);
+
+    // Mostra o tabuleiro com coordenadas
+    for (let l = 0; l < tamanho; l++) {
+        let linhaTexto = "";
+        for (let c = 0; c < tamanho; c++) {
+            if (l === linha && c === coluna) {
+                linhaTexto += ` R `;
+            } else {
+                linhaTexto += `${l},${c}`;
+            }
+
+            if (c < tamanho - 1) {
+                linhaTexto += " | ";
+            }
+        }
+        console.log(linhaTexto);
+    }
+}
+posicaoFinal(['direita', 'direita', 'baixo', 'baixo', 'cima', 'esquerda']);
+
 /* Crie um programa que leia um texto e informe quantas vogais,
 consoantes, digitos e espaços existem nele. */
+
+function analisarTexto(texto) {
+    let vogais = 0;
+    let consoantes = 0;
+    let digitos = 0;
+    let espacos = 0;
+
+    for (let i = 0; i < texto.length; i++) {
+        const char = texto[i];
+
+        if ('aeiou'.includes(char)) {
+            vogais++;
+        } else if (char >= 'a' && char <= 'z') {
+            consoantes++;
+        } else if (char >= '0' && char <= '9') {
+            digitos++;
+        } else if (char === ' ') {
+            espacos++;
+        }
+    }
+    console.log(`\nTexto analisado: "${texto}"`);
+    console.log(`Vogais: ${vogais}`);
+    console.log(`Consoantes: ${consoantes}`);
+    console.log(`Dígitos: ${digitos}`);
+    console.log(`Espaços: ${espacos}`);
+}
+const texto = ("Hoje é dia 03 de Setembro, 2025!").toLowerCase();
+analisarTexto(texto);
+
