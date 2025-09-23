@@ -215,7 +215,8 @@ let vetorC = somaElementosMesmoIndice(vetorA, vetorB);
 console.log(`\nlet vetorC =`, vetorC);
 
 // Crie uma função que receba um número e retorne True se ele for primo, senão False.
-let numPrimos = 4;
+let numPrimos = [1, 2, 3, 4, 7, 10, 13];
+
 function isPrime(n) {
     if (!Number.isInteger(n)) return false;
     if (n <= 1) return false;
@@ -228,10 +229,13 @@ function isPrime(n) {
     }
     return true;
 }
-if (isPrime(numPrimos)) {
-    console.log(`\n${numPrimos} é primo`);
-} else {
-    console.log(`\n${numPrimos} não é primo`);
+for (let i = 0; i < numPrimos.length; i++) {
+    const num = numPrimos[i];
+    if (isPrime(num)) {
+        console.log(`${num} é primo`);
+    } else {
+        console.log(`${num} não é primo`);
+    }
 }
 
 /* Implemente uma função que calcule o MDC 
@@ -245,9 +249,17 @@ function mdc(a, b) {
     }
     return a;
 }
-let num1 = 48;
-let num2 = 18;
-console.log(`\nO mdc de ${num1} e ${num2} é ${mdc(num1, num2)}`);
+
+let vetorMDC = [
+    { num1: 48, num2: 18 },
+    { num1: 100, num2: 25 },
+    { num1: 42, num2: 56 }
+];
+
+for (let i = 0; i < vetorMDC.length; i++) {
+    let { num1, num2 } = vetorMDC[i];
+    console.log(`O MDC de ${num1} e ${num2} é ${mdc(num1, num2)}`);
+}
 
 /* Escreva um programa que simule uma calculadora 
 simples usando funções. (Feito em um arquivo separado) */
