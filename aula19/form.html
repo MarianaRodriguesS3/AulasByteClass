@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Formulário</h1>
-    <form>
+  <div class="form">
+    <div class="quadrado">
+      <h1>Formulário</h1>
+      <form>
         <p>O que você está estudando no momento?</p>
         <div>
-            <input type="radio" id="html" name="tecnologia" value="html">
-            <label for="html">HTML</label><br>
-          </div>
-        
-          <div>
-            <input type="radio" id="css" name="tecnologia" value="css">
-            <label for="css">CSS</label><br>
-          </div>
-        
-          <div>
-            <input type="radio" id="js" name="tecnologia" value="js">
-            <label for="js">JS</label>
-          </div><br>
+          <input type="radio" id="html" name="tecnologia" value="html">
+          <label for="html">HTML</label><br>
+        </div>
 
-        <label for=""></label>
+        <div>
+          <input type="radio" id="css" name="tecnologia" value="css">
+          <label for="css">CSS</label><br>
+        </div>
+
+        <div>
+          <input type="radio" id="js" name="tecnologia" value="js">
+          <label for="js">JS</label>
+        </div><br>
+
         <label for="texto">Texto:</label><br>
         <input type="text" id="texto" name="texto"><br>
         <label for="senha">Senha:</label><br>
-        <input type="senha" id="senha" name="senha"><br><br>
-        <button type="submit">Enviar</button>
+        <input type="password" id="senha" name="senha"><br><br>
+        <p id="mensagem"></p>
+        <button class="botao" type="button" onclick="mudarCorDeFundo()">Enviar</button>
       </form>
+    </div>
+
+    <div class="galeria">
+      <img src="./img/imagem1.jpg" alt="Imagem 1" />
+      <img src="./img/imagem2.jpg" alt="Imagem 2" />
+      <img src="./img/imagem3.jpg" alt="Imagem 3" />
+      <img src="./img/imagem4.jpg" alt="Imagem 4" />
+      <img src="./img/imagem5.jpg" alt="Imagem 5" />
+      <img src="./img/imagem6.jpg" alt="Imagem 6" />
+    </div>
+  </div>
 </body>
+
+<script src="script.js"></script>
 </html>

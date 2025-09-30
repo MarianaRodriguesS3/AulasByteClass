@@ -2,56 +2,127 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercícios de Fixação</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios de Fixação</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <header>
-        <h1>Bem-Vindo!</h1>
-    </header>
-    <main>
-        <P>Exercícios de Fixação</P>
+  <header>
+    <h1 id="titulo">Bem-Vindo!</h1>
+  </header>
+
+  <main>
+    <p id="primeiroParagrafo">Exercícios de Html, Css e Js</p>
+
+    <ul class="menu">
+      <li><a href="#"><i class="fa-brands fa-html5"></i> HTML</a></li>
+      <li><a href="#"><i class="fa-brands fa-css3-alt"></i> CSS</a></li>
+      <li><a href="#"><i class="fa-brands fa-js"></i> JS</a></li>
+    </ul>
+
+
+
+    <div class="container-flex">
+      <div class="caixa">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/9EO47xna5oU"
+          title="Responsive Website With HTML CSS Bootstrap" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+
+      <div class="caixa">
         <a href="form.html">
-            <img src="imagem.jpg" alt="Clique na imagem para ir para o formulário">
+          <img src="./img/imagem.jpg" alt="Clique na imagem para ir para o formulário"
+            title="Clique na imagem para ir para o formulário" style="max-width: 100%;">
         </a>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JS</li>
-        </ul>
-        
+      </div>
+
+      <div class="caixa">
         <table>
-            <thead>
-              <tr>
-                <th>HTML</th>
-                <th>CSS</th>
-                <th>JS</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Listas</td>
-                <td>FlexBox</td>
-                <td>React</td>
-              </tr>
-              <tr>
-                <td>Forms</td>
-                <td>Grid</td>
-                <td>Next.js</td>
-              </tr>
-              <tr>
-                <td>Tabelas</td>
-                <td>Float</td>
-                <td>Node.js</td>
-              </tr>
-            </tbody>
-          </table>
-    </main>
-    <footer>
-        <a href="form.html">Clique aqui para ir para o formulário</a>
-    </footer>
+          <thead>
+            <tr>
+              <th>HTML</th>
+              <th>CSS</th>
+              <th>JS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Listas</td>
+              <td>FlexBox</td>
+              <td>React</td>
+            </tr>
+            <tr>
+              <td>Forms</td>
+              <td>Grid</td>
+              <td>Next.js</td>
+            </tr>
+            <tr>
+              <td>Tabelas</td>
+              <td>Float</td>
+              <td>Node.js</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Seção de Notícia -->
+    <section>
+      <h2><i class="fa-solid fa-newspaper"></i> Últimas Notícias</h2>
+      <article>
+        <h3>HTML e CSS seguem dominando o desenvolvimento web</h3>
+        <p>
+          <i class="fa-solid fa-calendar-days"></i> 30 de setembro de 2025 |
+          <i class="fa-solid fa-user"></i> Mariana Rodrigues |
+          <i class="fa-solid fa-folder-open"></i> Desenvolvimento Web
+        </p>
+        <p>
+          Segundo um relatório recente, HTML e CSS continuam sendo as tecnologias mais ensinadas nas escolas de
+          programação,
+          com JavaScript logo atrás, ganhando força com bibliotecas modernas como React e frameworks como Node.js.
+        </p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Minha Lista de Tarefas</h2>
+
+      <input type="text" id="novaTarefa" placeholder="Digite uma tarefa">
+      <button class="botao" onclick="adicionarTarefa()">Adicionar</button>
+
+      <ul id="listaDeTarefas"></ul>
+    </section>
+
+    <section>
+      <h2>Meu Relógio Digital</h2>
+
+      <div class="relogio" id="relogio">00:00:00</div>
+    </section>
+
+    <section>
+      <h2>Jogo de Adivinhação</h2>
+
+      <div>
+        <input type="number" id="palpite" placeholder="1 a 10" min="1" max="10" />
+        <button class="botao" onclick="verificarPalpite()">Tentar</button>
+      </div>
+
+      <div id="mensagem"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="circulo">
+      <a href="https://marianarodriguess3.github.io/portifolioMarianaRodrigues/">Meu perfil</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 
 </html>

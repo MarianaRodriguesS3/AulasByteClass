@@ -1,0 +1,196 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+
+}
+
+#primeiroParagrafo {
+    color: white;
+    background-color: #3498db;
+    font-size: 20px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px;
+}
+
+.botao {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+    background-color: #1a72ac;
+}
+
+.container-flex {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.caixa {
+    flex: 1 1 300px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(26, 114, 172, 0.5);
+}
+
+img {
+    width: 100%;
+    height: 315px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+
+table {
+    width: 100%;
+    height: 315px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    overflow: hidden;
+}
+
+
+thead {
+    background-color: #3498db;
+    color: white;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+    /* Linhas alternadas */
+}
+
+tbody tr:hover {
+    background-color: #dceeff;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    background-color: #f4f4f4;
+}
+
+.menu li {
+    margin: 0 300px 0 10px;
+}
+
+
+.menu a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+
+.menu a:hover {
+    background-color: #dceeff;
+}
+
+.menu i {
+    font-size: 18px;
+    color: #3498db;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.circulo {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.circulo a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.quadrado {
+  width: 350px;
+  background-color: red;
+  animation: mudarCor 3s infinite alternate;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  color: #000;
+}
+
+@keyframes mudarCor {
+  0%   { background-color: red; }
+  25%  { background-color: orange; }
+  50%  { background-color: yellow; }
+  75%  { background-color: green; }
+  100% { background-color: blue; }
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 650px;
+}
+
+.galeria img {
+  width: 100%;
+  height: 186px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+input#novaTarefa,
+input#palpite {
+  padding: 10px 15px;
+}
+
+ul#listaDeTarefas {
+  margin: 20px;
+}
