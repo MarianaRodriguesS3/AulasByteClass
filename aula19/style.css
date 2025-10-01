@@ -92,14 +92,18 @@ tbody tr:hover {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     background-color: #f4f4f4;
 }
 
 .menu li {
-    margin: 0 300px 0 10px;
+    /* margin: 0 300px 0 10px; */
+    width: 100%;
 }
 
+.menu li.li-titulo:hover {
+    background-color: #dceeff;
+}
 
 .menu a {
     display: flex;
@@ -109,13 +113,8 @@ tbody tr:hover {
     color: #333;
     text-decoration: none;
     font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-
-.menu a:hover {
-    background-color: #dceeff;
-}
+    transition: background-color 0.3s ease; 
+} 
 
 .menu i {
     font-size: 18px;
@@ -146,51 +145,65 @@ footer {
 }
 
 .form {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 40px;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px;
+    flex-wrap: wrap;
 }
 
 .quadrado {
-  width: 350px;
-  background-color: red;
-  animation: mudarCor 3s infinite alternate;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  color: #000;
+    width: 350px;
+    background-color: red;
+    animation: mudarCor 3s infinite alternate;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #000;
 }
 
 @keyframes mudarCor {
-  0%   { background-color: red; }
-  25%  { background-color: orange; }
-  50%  { background-color: yellow; }
-  75%  { background-color: green; }
-  100% { background-color: blue; }
+    0% {
+        background-color: red;
+    }
+
+    25% {
+        background-color: orange;
+    }
+
+    50% {
+        background-color: yellow;
+    }
+
+    75% {
+        background-color: green;
+    }
+
+    100% {
+        background-color: blue;
+    }
 }
 
 .galeria {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  max-width: 650px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 650px;
 }
 
 .galeria img {
-  width: 100%;
-  height: 186px;
-  border-radius: 8px;
-  object-fit: cover;
+    width: 100%;
+    height: 186px;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 input#novaTarefa,
 input#palpite {
-  padding: 10px 15px;
+    padding: 10px 15px;
 }
 
 ul#listaDeTarefas {
-  margin: 20px;
+    margin: 20px;
 }

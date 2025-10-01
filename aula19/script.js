@@ -64,10 +64,10 @@ function atualizarRelogio() {
     const segundos = String(agora.getSeconds()).padStart(2, '0');
 
     const horaAtual = `${horas}:${minutos}:${segundos}`;
-
+    //console.log("olha aqui:", agora)
     document.getElementById('relogio').textContent = horaAtual;
 }
-atualizarRelogio();
+//atualizarRelogio();
 
 // Atualiza o relógio a cada segundo
 setInterval(atualizarRelogio, 1000);
@@ -82,7 +82,7 @@ function verificarPalpite() {
     const input = document.getElementById('palpite');
     const mensagem = document.getElementById('mensagem');
     const palpite = Number(input.value);
-
+    console.log("olha aqui", input)
     if (!palpite || palpite < 1 || palpite > 10) {
         mensagem.textContent = 'Por favor, digite um número entre 1 e 10.';
         mensagem.style.color = 'red';
