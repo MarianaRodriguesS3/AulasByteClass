@@ -157,6 +157,21 @@ function mudarCorDeFundo() {
     }
 }
 
+const btnTopo = document.getElementById("btnTopo");
+
+window.onscroll = function () {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        btnTopo.style.display = "block";
+    } else {
+        btnTopo.style.display = "none";
+    }
+};
+
+btnTopo.onclick = function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+
 
 /*
 const cores = ['#FF5733', '#33FF57', '#3357FF', '#F3FF33', '#FF33F6'];

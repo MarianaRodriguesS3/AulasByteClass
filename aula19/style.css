@@ -123,19 +123,21 @@ tbody tr:hover {
 
 footer {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     padding: 20px;
 }
 
 .circulo {
     width: 100px;
     height: 100px;
+    color: white;
     background-color: #3498db;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    border: none;
 }
 
 .circulo a {
@@ -161,6 +163,23 @@ footer {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     color: #000;
+}
+
+.voltar {
+    display: inline-block;
+    margin-left: 100px;
+    padding: 10px 20px;
+    background-color: #f0f0f0; 
+    color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.voltar:hover {
+    background-color: #e0e0e0; 
 }
 
 @keyframes mudarCor {
