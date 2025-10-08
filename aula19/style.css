@@ -97,7 +97,6 @@ tbody tr:hover {
 }
 
 .menu li {
-    /* margin: 0 300px 0 10px; */
     width: 100%;
 }
 
@@ -165,43 +164,12 @@ footer {
     color: #000;
 }
 
-.voltar {
-    display: inline-block;
-    margin-left: 100px;
-    padding: 10px 20px;
-    background-color: #f0f0f0; 
-    color: #333;
-    text-decoration: none;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-.voltar:hover {
-    background-color: #e0e0e0; 
-}
-
 @keyframes mudarCor {
-    0% {
-        background-color: red;
-    }
-
-    25% {
-        background-color: orange;
-    }
-
-    50% {
-        background-color: yellow;
-    }
-
-    75% {
-        background-color: green;
-    }
-
-    100% {
-        background-color: blue;
-    }
+    0% {background-color: red;}
+    25% {background-color: orange;}
+    50% {background-color: yellow;}
+    75% {background-color: green;}
+    100% {background-color: blue;}
 }
 
 .galeria {
@@ -225,4 +193,21 @@ input#palpite {
 
 ul#listaDeTarefas {
     margin: 20px;
+}
+
+.voltar {
+    display: inline-block;
+    margin-left: 100px;
+    padding: 10px 20px;
+    background-color: #f0f0f0; 
+    color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.voltar:hover {
+    background-color: #e0e0e0; 
 }
