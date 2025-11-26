@@ -1,8 +1,15 @@
 const express = require('express');
+const mongoose = require('mongoose')
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
+
+const MONGODB_URI = 'mongodb://127.0.0.1:27017/minha_api'
+
+mongoose.connect(MONGODB_URI)
+    .then(() => console.log('mongoDBconectado'))
+    .catch(err => console.error('Erro de conexão com o mongoDB:', err));
 
 // Simulação
 let clientes = [
@@ -47,6 +54,19 @@ app.put('/clientes/:id', (req, res) => {
         res.json(clientes[indice]);
     } else {
         res.status(404).json({mensagem: 'cliente para atualização não encontrado!'});
+    }
+});
+
+app.delete('/clientes/:id', (req, res) => {
+    const idBuscado = parseInt(req.params.id);
+    const tamanhoInicial = clientes.length;
+
+    clientes = clientes.filter(c => c.id !== idBuscado);
+
+    if (clientes.length < tamanhoInicial){
+        res.status(204).send(); // deletado com sucesso
+    } else {
+        res.status(404).json({ mensagem: 'cliente para deletar não encontrado' });
     }
 });
 
