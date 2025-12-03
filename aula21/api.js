@@ -17,56 +17,64 @@ let clientes = [
     { id: 2, nome: "Bruno", email: "bruno@exemplo.com" }
 ];
 
-app.get('/clientes', (req, res) => {
-    res.json(clientes);
-});
-
-app.get('/clientes/:id', (req, res) => {
-    const idBuscado = parseInt(req.params.id);
-    const cliente = clientes.find(c => c.id === idBuscado);
-
-    if (cliente) {
-        res.json(cliente);
-    } else {
-        res.status(404).json({mensagem: "cliente não encontrado"});
+app.get('/clientes', async (rec, res) => {
+    try {
+        const Clientes = await Clientes.find();
+        res.json(clientes);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ mensagem: 'erro no servidor interno ao buscar clientes.' });
     }
 });
 
-app.post('/clientes', (req, res) => {
-    const novoCliente = req.body;
-    const novoId = clientes.length > 0 ? clientes [clientes.length-1].id + 1 : 1;
-    const clienteComId = {id:novoId, ... novoCliente}; // Adiciona o ID
-    
-    clientes.push(clienteComId);
-    res.status(201).json(clienteComId);
-});
-
-app.put('/clientes/:id', (req, res) => {
-    
-    const idBuscado = parseInt(req.params.id);
-
-    const novosDados = req.body;
-
-    const indice = clientes.findIndex(c => c.id === idBuscado);
-
-    if (indice !== -1) {
-        clientes[indice] = {...[indice], ... novosDados};
-        res.json(clientes[indice]);
-    } else {
-        res.status(404).json({mensagem: 'cliente para atualização não encontrado!'});
+app.get('/clientes/:id', async (req, res) => {
+    try {
+        const clientes = await Cliente.findById(req.params.id);
+        if (!clientes) {
+            return res.status(404).json({ mensagem: 'cliente não encontrado' });
+        }
+        res.json(clientes);
+    } catch (error) {
+        res.status(400).json({ mensagem: 'ID inválido' });
     }
 });
 
-app.delete('/clientes/:id', (req, res) => {
-    const idBuscado = parseInt(req.params.id);
-    const tamanhoInicial = clientes.length;
+app.post('/clientes', async (req, res) => {
+    try {
+        const novoCliente = new Cliente(req.body);
+        await novoCliente.save();
+        res.status(201).json(novoCliente);
+    } catch (error) {
+        res.status(400).json({ mensagem: 'erro ao cadastrar cliente', erro: error.mensage });
+    }
+});
 
-    clientes = clientes.filter(c => c.id !== idBuscado);
+app.put('/clientes/:id', async (req, res) => {
+    try {
+        const clienteAtualizado = await Cliente.findByIdUpdate(
+            req.params.id,
+            req.body,
+            { new: true, runValidators: true }
+        )
+        if (!clienteAtualizado) {
+            return res.status(404).json({ mensagem: 'cliente para atualizar não encontrado' });
+        }
+    } catch (error) {
+        req.status(400).json({ mensagem: 'erro ao atualizar cliente', erro: error.mensage });
+    }
+});
 
-    if (clientes.length < tamanhoInicial){
-        res.status(204).send(); // deletado com sucesso
-    } else {
-        res.status(404).json({ mensagem: 'cliente para deletar não encontrado' });
+app.delete('/clientes/:id', async (req, res) => {
+    try {
+        const clienteRemovido = await Cliente.findByIdAndDelete(req.params.id);
+
+        if (!clienteRemovido) {
+            return res.status(404).json({  mensagem: 'cliente para deletar não encontrado'});
+        }
+        res.status(204).send();
+
+    } catch (error) {
+        res.status (500).json({ mensagem: 'erro interno ao tentar deletar cliente'});
     }
 });
 
