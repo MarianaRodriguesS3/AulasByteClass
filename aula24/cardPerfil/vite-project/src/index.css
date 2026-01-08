@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(circle at center,
+    #f6faff 0%,
+    #d6dde3 30%,
+    #a8b6cc 55%,
+    #6c7a9b 75%,
+    #2c3e50 100%
+  );
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.cracha-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cracha {
+  width: 340px;
+  background-color: #1e3c72;
+  color: #edf1ec;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); 
+}
+
+.cracha-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.cracha h1 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.cracha p {
+  font-size: 14px;
+  color: #bdc3c7;
+}
+
+.personal-info ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.personal-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.personal-info .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-emoji {
+  font-size: 18px;
+}
+
+.personal-info a {
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  color: #ecf0f1;
+  text-decoration: none;
+}
+
+.personal-info a:hover {
+  text-decoration: underline;
+}
