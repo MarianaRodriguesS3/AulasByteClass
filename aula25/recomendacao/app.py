@@ -2,13 +2,13 @@ import streamlit as st
 
 # Configuração da página
 st.set_page_config(
-    page_title="Sistema de Recomendação",
+    page_title="Cine&Livro",
     layout="wide"
 )
 
 # Título
-st.title("🎬📚 Sistema de Recomendação")
-st.write("Descubra filmes e livros de acordo com seu gosto")
+st.title("🎬📚 Cine&Livro")
+st.write("Descubra filmes e livros incríveis para adicionar a sua coleção!")
 
 # 🔍 Barra de pesquisa geral
 search = st.text_input("🔍 Pesquisar filmes ou livros")
@@ -51,15 +51,15 @@ st.subheader("📌 Recomendações")
 # Dados mockados (temporários)
 itens = [
     {
-        "titulo": "Interestelar",
-        "descricao": "Uma jornada épica pelo espaço e pelo tempo.",
-        "imagem": "https://via.placeholder.com/300x200",
+        "titulo": "Percy Jackson e O ladrão de Raios - Filme 2010",
+        "descricao": "Percy Jackson descobre ser filho de Poseidon e é acusado de roubar o raio de Zeus. Para salvar sua mãe, parte com Grover e Annabeth para o Mundo Inferior enfrentar Hades." ,
+        "imagem": "./assets/percyFilme1.jpg",
         "tipo": "Filme"
     },
     {
-        "titulo": "O Senhor dos Anéis",
-        "descricao": "Uma aventura fantástica na Terra Média.",
-        "imagem": "https://via.placeholder.com/300x200",
+        "titulo": "Percy Jackson - O ladrão de Raios",
+        "descricao": "Primeiro volume da saga Percy Jackson e os olimpianos, O ladrão de raios esteve entre os primeiros lugares na lista das séries mais vendidas do The New York Times.",
+        "imagem": "./assets/percyLivro1.jpg",
         "tipo": "Livro"
     },
     {
@@ -75,7 +75,7 @@ cols = st.columns(3)
 
 for idx, item in enumerate(itens):
     with cols[idx % 3]:
-        st.image(item["imagem"], use_container_width=True)
+        st.image(item["imagem"], width=300) 
         st.markdown(f"### {item['titulo']}")
         st.write(item["descricao"])
         st.caption(item["tipo"])
