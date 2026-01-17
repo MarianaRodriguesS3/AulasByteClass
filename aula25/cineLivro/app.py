@@ -34,22 +34,36 @@ if navegacao != "Home":
 itens = buscar_dados(tipo=navegacao, categoria=categoria_sel, busca=search)
 
 # Renderização dos Cards (Frontend)
+# Renderização dos Cards (Frontend)
 st.divider()
+
 if itens:
-    for i in range(0, len(itens), 3):
-        cols = st.columns(3)
-        for j, item in enumerate(itens[i:i+3]):
-            with cols[j]:
-                # Lógica de imagem simplificada
-                st.image(item['imagem'], use_container_width=True)
-                st.markdown(f"""
-                <div class="card">
-                    <h3>{item['titulo']}</h3>
-                    <p>{item['descricao']}</p>
-                    <span class="badge">{item['tipo']}</span>
-                </div>
-                """, unsafe_allow_html=True)
+    # 1. Agrupar itens por categoria
+    categorias_encontradas = {}
+    for item in itens:
+        cat = item['categoria']
+        if cat not in categorias_encontradas:
+            categorias_encontradas[cat] = []
+        categorias_encontradas[cat].append(item)
+
+    # 2. Iterar sobre cada categoria e criar o cabeçalho
+    for categoria, lista_itens in categorias_encontradas.items():
+        st.subheader(f"{categoria}") # Título da Categoria
+        
+        # 3. Renderizar os cards em colunas (3 por linha)
+        for i in range(0, len(lista_itens), 3):
+            cols = st.columns(3)
+            for j, item in enumerate(lista_itens[i:i+3]):
+                with cols[j]:
+                    st.image(item['imagem'], use_container_width=True)
+                    st.markdown(f"""
+                    <div class="card">
+                        <h3>{item['titulo']}</h3>
+                        <p>{item['descricao']}</p>
+                        <span class="badge">{item['tipo']}</span>
+                    </div>
+                    """, unsafe_allow_html=True)
+        
+        st.write("---") # Uma linha sutil para separar as categorias
 else:
     st.info("Nenhum resultado encontrado.")
-
-    

@@ -73,8 +73,8 @@ div[data-baseweb="select"]:focus-within > div {
 
 
 .card {
-    width: 300px;
-    height: 200px;
+    width: 330px;
+    height: 230px;
 
     display: flex;
     flex-direction: column;
@@ -85,6 +85,5 @@ div[data-baseweb="select"]:focus-within > div {
 }
 
 img {
-   
     height: 450px;
 }
