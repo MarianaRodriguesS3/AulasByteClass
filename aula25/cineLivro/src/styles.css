@@ -1,0 +1,90 @@
+/* Esconde a barra superior do Streamlit (Deploy, menu, etc) */
+header {
+    visibility: hidden;
+    height: 0;
+}
+
+.nav-custom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+
+    width: 100%;
+    padding: 1rem 0;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: #333;
+}
+
+/* Itens da navbar */
+.nav-item {
+    flex: 1;
+    text-align: center;
+}
+
+.nav-item a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-family: Arial, sans-serif;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-item a:hover {
+    color: #007BFF !important;
+}
+
+/* Evita que o conteúdo fique escondido atrás da navbar fixa */
+.content-wrapper {
+    padding-top: 80px; /* altura da navbar */
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* Inputs de texto */
+input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px #007BFF;
+}
+
+/* Selectbox */
+div[data-baseweb="select"] > div {
+    border-radius: 8px;
+    border: 2px solid #ccc;
+}
+
+div[data-baseweb="select"]:focus-within > div {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px #007BFF;
+}
+
+
+.card {
+    width: 300px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+img {
+   
+    height: 450px;
+}

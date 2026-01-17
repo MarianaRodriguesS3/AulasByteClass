@@ -13,7 +13,6 @@ Este projeto é um sistema de recomendação simples de filmes e livros desenvol
 - Interface web interativa em Python
 - Listagem de filmes e livros
 - Filtro por gênero/categoria
-- Recomendação simples baseada em similaridade
 - Dados armazenados em banco de dados SQLite
 - Atualização dinâmica da interface
 
