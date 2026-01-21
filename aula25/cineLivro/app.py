@@ -34,7 +34,6 @@ if navegacao != "Home":
 itens = buscar_dados(tipo=navegacao, categoria=categoria_sel, busca=search)
 
 # Renderização dos Cards (Frontend)
-# Renderização dos Cards (Frontend)
 st.divider()
 
 if itens:

@@ -4,7 +4,6 @@ import os
 
 def create_database():
     # 1. Conectar ao banco (se não existir, o SQLite cria o arquivo .db)
-    # Criamos dentro de uma pasta 'database' para ficar organizado
     if not os.path.exists('database'):
         os.makedirs('database')
         
