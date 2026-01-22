@@ -64,5 +64,7 @@ if itens:
                     """, unsafe_allow_html=True)
         
         st.write("---") # Uma linha sutil para separar as categorias
+
+        
 else:
     st.info("Nenhum resultado encontrado.")

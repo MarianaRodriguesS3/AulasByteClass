@@ -1,3 +1,8 @@
+.stApp {
+    background-color: #dfcef1;
+
+}
+
 /* Esconde a barra superior do Streamlit (Deploy, menu, etc) */
 header {
     visibility: hidden;
@@ -9,14 +14,11 @@ header {
     top: 0;
     left: 0;
     z-index: 999999;
-
     width: 100%;
     padding: 1rem 0;
-
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     background-color: #333;
 }
 
@@ -35,7 +37,7 @@ header {
 }
 
 .nav-item a:hover {
-    color: #007BFF !important;
+    color: #7923d4 !important;
 }
 
 /* Evita que o conteúdo fique escondido atrás da navbar fixa */
@@ -46,40 +48,46 @@ header {
 }
 
 /* Inputs de texto */
-input[type="text"] {
-    padding: 8px;
-    font-size: 16px;
-    border: 2px solid #ccc;
+div[data-baseweb="input"]:focus-within {
+    border-color: #7923d4;           /* mesma cor da borda do select */
+    box-shadow: 0 0 5px #771fd4; 
+    outline: none;
     border-radius: 8px;
-    transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
-input[type="text"]:focus {
-    border-color: #007BFF;
+/* Input interno */
+div[data-baseweb="input"] input {
+    padding: 8px;
+    font-size: 16px;
+    background-color: #dfcef1;
+    border: 2px solid #7923d4;
+    border-radius: 8px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
     outline: none;
-    box-shadow: 0 0 5px #007BFF;
+}
+
+div[data-baseweb="input"] input:focus {
+    box-shadow: none;
 }
 
 /* Selectbox */
 div[data-baseweb="select"] > div {
     border-radius: 8px;
-    border: 2px solid #ccc;
+    border: 2px solid #7923d4;
+    background-color: #dfcef1;
 }
 
 div[data-baseweb="select"]:focus-within > div {
-    border-color: #007BFF;
-    box-shadow: 0 0 5px #007BFF;
+    border-color: #7923d4;
+    box-shadow: 0 0 5px #771fd4;
 }
-
 
 .card {
     width: 330px;
     height: 230px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     overflow: hidden;
     margin-bottom: 20px;
 }
