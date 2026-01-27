@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
-from src.backend import buscar_dados # Importa a lógica do backend
+from st_keyup import st_keyup
+from src.backend import buscar_dados
 
 st.set_page_config(layout="wide", page_title="Cine&Livro")
 
@@ -22,7 +23,14 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 st.title("🎬📚 Cine&Livro")
-search = st.text_input("🔍 Pesquisar...")
+
+# --- BUSCA EM TEMPO REAL COM APARÊNCIA ORIGINAL ---
+search = st_keyup(
+    label="Pesquisar...", 
+    placeholder="🔍 Pesquisar...", 
+    key="search_input",
+    label_visibility="collapsed" 
+)
 
 # Filtro de categoria (Frontend UI)
 categoria_sel = "Todas"
@@ -47,14 +55,17 @@ if itens:
 
     # 2. Iterar sobre cada categoria e criar o cabeçalho
     for categoria, lista_itens in categorias_encontradas.items():
-        st.subheader(f"{categoria}") # Título da Categoria
+        st.subheader(f"{categoria}")
         
         # 3. Renderizar os cards em colunas (3 por linha)
         for i in range(0, len(lista_itens), 3):
             cols = st.columns(3)
             for j, item in enumerate(lista_itens[i:i+3]):
                 with cols[j]:
-                    st.image(item['imagem'], use_container_width=True)
+                    # Verificação de segurança para imagem
+                    if item.get('imagem'):
+                        st.image(item['imagem'], use_container_width=True)
+                    
                     st.markdown(f"""
                     <div class="card">
                         <h3>{item['titulo']}</h3>
@@ -63,8 +74,6 @@ if itens:
                     </div>
                     """, unsafe_allow_html=True)
         
-        st.write("---") # Uma linha sutil para separar as categorias
-
-        
+        st.write("---") 
 else:
-    st.info("Nenhum resultado encontrado.")
+    st.info(f"Nenhum resultado encontrado para: '{search}'")
