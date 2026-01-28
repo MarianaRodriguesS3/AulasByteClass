@@ -24,13 +24,18 @@ st.markdown(f"""
 
 st.title("🎬📚 Cine&Livro")
 
-# --- BUSCA EM TEMPO REAL COM APARÊNCIA ORIGINAL ---
+# Adicione este container para garantir o espaçamento correto
+st.markdown('<div class="content-wrapper">', unsafe_allow_html=True)
+
+# A mágica acontece aqui:
 search = st_keyup(
     label="Pesquisar...", 
     placeholder="🔍 Pesquisar...", 
     key="search_input",
     label_visibility="collapsed" 
 )
+
+st.markdown('</div>', unsafe_allow_html=True)
 
 # Filtro de categoria (Frontend UI)
 categoria_sel = "Todas"
