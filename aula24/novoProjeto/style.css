@@ -1,0 +1,71 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d698df;
+    padding: 20px; /* Padding uniforme em todas as direções */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container vertical */
+.container {
+    display: flex;
+    flex-direction: column; /* Cards empilhados */
+    justify-content: space-between; /* Espaço entre os cards */
+    height: 80%; /* Ocupa 80% da altura da tela */
+    width: calc(100% - 40px); /* 20px de padding em cada lado */
+    max-width: 1200px;
+}
+
+/* Cards */
+.container > div {
+    flex: 1; /* Cada card ocupa a mesma altura */
+    background-color: #ee1d1d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+/* Cores individuais */
+#card1 { background-color: #ee1d1d; }
+#card2 { background-color: #1d91ee; }
+#card3 { background-color: #1dee5b; }
+
+/* Hover */
+.container > div:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsivo horizontal (deitado) */
+@media (orientation: landscape) {
+    .container {
+        flex-direction: row; /* Lado a lado */
+        justify-content: space-between;
+        height: 80%; /* mesma altura */
+    }
+
+    .container > div {
+        flex: 1; /* Largura igual */
+        margin: 0; /* espaço controlado pelo gap */
+    }
+
+    .container {
+        gap: 20px; /* distância entre cards horizontal */
+    }
+}
